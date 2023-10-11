@@ -33,9 +33,9 @@
             <li class="menu__item"><a href="login.php" class="menu__link"><span>Iniciar sesion</span></a></li>
             <li class="menu__item"><a href="" class="menu__link"><span>informacion</span></a>
               <ul class="submenu">
-                <li ><a href="http://www.informatica.edu.bo/"><span>Carrera informatica</span></a></li>
-                <li ><a href="http://informatica.umsa.bo/kardex/"><span>Kardex</span></a></li>
-                <li ><a href="https://www.umsa.bo/institutos"><span>instituto de investigacion</span></a></li>
+                <li ><a href="carrera.php"><span>Carrera informatica</span></a></li>
+                <li ><a href="kardex.php"><span>Kardex</span></a></li>
+                <li ><a href="investigacion.php"><span>instituto de investigacion</span></a></li>
 					    </ul>
             </li>
             <li class="menu__item"><a href="https://t.me/Fabri_ac4" class="menu__link"><span>Contacto</span></a></li>
