@@ -31,6 +31,71 @@ class Welcome extends CI_Controller {
 		$datos["estudiante"]=$this->alumnin->getAlumno();
 		$this->load->view('welcome_message2', $datos);
 	}
+
+	public function eliminar($id = null)
+	{
+		if(!$id == null)
+		{
+			$datos["Nombre"]="Kenneth";
+			$datos["Apellido"]="Aliaga Ramirez";
+			$datos["Materia"]="INF324";
+			$this->load->model("alumnin");
+			$this->alumnin->elimAlumno($id);
+			$datos["estudiante"]=$this->alumnin->getAlumno();
+			$this->load->view('welcome_message2', $datos);
+
+		}
+	}
+
+	public function agregar()
+	{
+			$this->load->view('adicionar');
+
+	}
+
+	
+	public function sumarnuevo()
+	{
+		if($this->input->post())	
+		{
+			$datos["Nombre"]="Kenneth";
+			$datos["Apellido"]="Aliaga Ramirez";
+			$datos["Materia"]="INF324";
+			$this->load->model("alumnin");
+			$this->alumnin->addAlumno($_POST["matricula"],$_POST["usuario"],$_POST["email"],$_POST["contra"]);
+			$datos["estudiante"]=$this->alumnin->getAlumno();
+			$this->load->view('welcome_message2', $datos);
+		}
+	}
+	
+	public function modificar($id = null)
+	{
+		
+		if(!$id == null)
+		{
+			$this->load->model("alumnin");
+			$datos["estudiante"]=$this->alumnin->escAlumno($id);
+			$this->load->view('modd', $datos);
+
+		}
+
+	}
+	public function estudiantemod($id = null)
+	{
+		if(!$id == null)
+		{
+			if($this->input->post())	
+			{
+				$datos["Nombre"]="Kenneth";
+				$datos["Apellido"]="Aliaga Ramirez";
+				$datos["Materia"]="INF324";
+				$this->load->model("alumnin");
+				$this->alumnin->modAlumno($id,$_POST["usuario"],$_POST["email"],$_POST["contra"]);
+				$datos["estudiante"]=$this->alumnin->getAlumno();
+				$this->load->view('welcome_message2', $datos);
+			}
+		}
+	}
 	
 }
 

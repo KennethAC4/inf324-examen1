@@ -78,6 +78,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </head>
 <body>
 
+<?php 
+					//print_r($alumnos);
+					foreach($estudiante as $fila)
+					{
+?>
+
 <div id="container">
 	<h1>Welcome to CodeIgniter!</h1>
 
@@ -85,43 +91,26 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<h1>Ejemplo F</h1>
 		<h2>INF324</h2>
 		un buen ejemplo <br>
-		<?php 
-			echo "Nombre: ".$Nombre."</br>";
-			echo "Apellido: ".$Apellido."</br>";
-			echo "Materia: ".$Materia."</br>";
-		?>
-		<table>
-			<tr>
-				<td>Matricula</td>
-				<td>Usuario</td>
-				<td>Correo</td>
-				<td>Contraseña</td>
-				<td>Acciones</td>
-			</tr>
-				<?php 
-					//print_r($alumnos);
-					foreach($estudiante as $fila)
-					{
-				?>
-			<tr>
-					<?php 
-						echo "<td>".$fila['matricula']."</td>";
-						echo "<td>".$fila['usuario']."</td>";
-						echo "<td>".$fila['email']."</td>";
-						echo "<td>".$fila['contraseña']."</td>";
-						echo "<td>";
-            			echo "<a href='http://localhost:8080/codexa/index.php/welcome/eliminar/".$fila["matricula"]."'>Eliminar ";
-            			echo "<a href='http://localhost:8080/codexa/index.php/welcome/modificar/".$fila["matricula"]."'>Modificar";
-            			echo "</td>";
-					?>
-			</tr>
-				<?php 
-					}
-				?>
-		</table>
-		<a href="http://localhost:8080/codexa/index.php/welcome/agregar">Adicionar</a>  
-	</div>
 
+		<form action = "http://localhost:8080/codexa/index.php/welcome/estudiantemod/<?php echo $fila['matricula'];?>" method = "post">
+			<p>matricula: <?php echo $fila['matricula'];?></p>
+			usuario
+			<input type="text" name = "usuario" value = "<?php echo $fila['usuario'];?>">
+			<br/>
+			correo
+			<input type="email" name = "email" value = "<?php echo $fila['email'];?>">
+			<br/>
+			contraseña
+			<input type="password" name = "contra" value = "<?php echo $fila['contraseña'];?>">
+			<br/>
+			<input type="submit" value = "Aceptar" name = "Aceptar">
+			<input type="submit" value = "Cancelar" name = "Cancelar">
+		</form>
+	</div>
+					
+	<?php 
+					}
+?>
 	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
 </div>
 

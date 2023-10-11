@@ -85,10 +85,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<h1>Ejemplo F</h1>
 		<h2>INF324</h2>
 		un buen ejemplo <br>
+
 		<?php 
-			echo "Nombre: ".$Nombre."</br>";
-			echo "Apellido: ".$Apellido."</br>";
-			echo "Materia: ".$Materia."</br>";
+			echo "se elimino a:";
 		?>
 		<table>
 			<tr>
@@ -109,18 +108,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						echo "<td>".$fila['usuario']."</td>";
 						echo "<td>".$fila['email']."</td>";
 						echo "<td>".$fila['contraseña']."</td>";
-						echo "<td>";
-            			echo "<a href='http://localhost:8080/codexa/index.php/welcome/eliminar/".$fila["matricula"]."'>Eliminar ";
-            			echo "<a href='http://localhost:8080/codexa/index.php/welcome/modificar/".$fila["matricula"]."'>Modificar";
-            			echo "</td>";
 					?>
 			</tr>
 				<?php 
 					}
 				?>
 		</table>
-		<a href="http://localhost:8080/codexa/index.php/welcome/agregar">Adicionar</a>  
 	</div>
+					
 
 	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
 </div>

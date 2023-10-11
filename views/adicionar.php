@@ -85,42 +85,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<h1>Ejemplo F</h1>
 		<h2>INF324</h2>
 		un buen ejemplo <br>
-		<?php 
-			echo "Nombre: ".$Nombre."</br>";
-			echo "Apellido: ".$Apellido."</br>";
-			echo "Materia: ".$Materia."</br>";
-		?>
-		<table>
-			<tr>
-				<td>Matricula</td>
-				<td>Usuario</td>
-				<td>Correo</td>
-				<td>Contraseña</td>
-				<td>Acciones</td>
-			</tr>
-				<?php 
-					//print_r($alumnos);
-					foreach($estudiante as $fila)
-					{
-				?>
-			<tr>
-					<?php 
-						echo "<td>".$fila['matricula']."</td>";
-						echo "<td>".$fila['usuario']."</td>";
-						echo "<td>".$fila['email']."</td>";
-						echo "<td>".$fila['contraseña']."</td>";
-						echo "<td>";
-            			echo "<a href='http://localhost:8080/codexa/index.php/welcome/eliminar/".$fila["matricula"]."'>Eliminar ";
-            			echo "<a href='http://localhost:8080/codexa/index.php/welcome/modificar/".$fila["matricula"]."'>Modificar";
-            			echo "</td>";
-					?>
-			</tr>
-				<?php 
-					}
-				?>
-		</table>
-		<a href="http://localhost:8080/codexa/index.php/welcome/agregar">Adicionar</a>  
+
+		<form action = "sumarnuevo" method = "post">
+			matricula
+			<input type="text" name = "matricula" value = "">
+			<br/>
+			usuario
+			<input type="text" name = "usuario" value = "">
+			<br/>
+			correo
+			<input type="email" name = "email" value = "">
+			<br/>
+			contraseña
+			<input type="password" name = "contra" value = "">
+			<br/>
+			<input type="submit" value = "Aceptar" name = "Aceptar">
+			<input type="submit" value = "Cancelar" name = "Cancelar">
+		</form>
 	</div>
+					
 
 	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
 </div>
